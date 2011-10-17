@@ -1,0 +1,23 @@
+<h1>Yeni Gönderi</h1>
+
+<%= form_for @post do |f| %>
+    <% if @post.errors.any? %>
+        <h2>Hata!</h2>
+        <ul>
+          <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+    <% end %>
+    <p>
+      <%= f.label :Başlık %><br />
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :İçerik %><br />
+      <%= f.text_area :content %>
+    </p>
+    <p>
+      <%= f.submit "Gönder" %>
+    </p>
+<% end %>
