@@ -1,5 +1,7 @@
 <h1>Starter Blog</h1>
+<% if current_user %>
 <p><%= link_to "Yeni Makale", new_post_path %></p>
+<% end %>
 <% @posts.each do |post|  %>
 
         <h2><%= link_to post.title, post %></h2>
@@ -15,4 +17,6 @@
     <% end %>
     <hr/>
 <% end %>
+<% if current_user %>
 <p><%= link_to "Yeni Makale", new_post_path %></p>
+<% end %>
