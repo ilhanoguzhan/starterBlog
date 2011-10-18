@@ -44,7 +44,7 @@ class UserSessionsController < ApplicationController
 
     respond_to do |format|
       if @user_session.save
-        format.html { redirect_to @user_session, notice: 'User session was successfully created.' }
+        format.html { redirect_to posts_path, notice: 'User session was successfully created.' }
         format.json { render json: @user_session, status: :created, location: @user_session }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class UserSessionsController < ApplicationController
 
     respond_to do |format|
       if @user_session.update_attributes(params[:user_session])
-        format.html { redirect_to @user_session, notice: 'User session was successfully updated.' }
+        format.html { redirect_to posts_path, notice: 'User session was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -76,7 +76,7 @@ class UserSessionsController < ApplicationController
     @user_session.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_sessions_url }
+      format.html { redirect_to posts_path }
       format.json { head :ok }
     end
   end

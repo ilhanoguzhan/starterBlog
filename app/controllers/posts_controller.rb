@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(params[:post])
+    @post.postUser = current_user.username
     if @post.save
       redirect_to posts_path, :notice => "Gonderi Basarili"
     else

@@ -36,4 +36,9 @@ class PostsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get user post" do
+    get :postUser
+    assert_response :success
+  end
+
 end
